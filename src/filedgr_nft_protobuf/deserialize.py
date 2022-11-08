@@ -1,5 +1,5 @@
 from . import filedgr_nft_pb2 as myNft
-from .exceptions.custom_exceptions import SerializationException, DeserializationException
+from .exceptions.custom_exceptions import DeserializationException
 
 
 def deserialize(
@@ -11,6 +11,8 @@ def deserialize(
     :return:
     """
     try:
-        pass
+        nft = myNft.Nft()
+        nft.ParseFromString(message)
+        return nft.id, nft.campaign, nft.uri
     except Exception as exc:
         raise DeserializationException(exc)

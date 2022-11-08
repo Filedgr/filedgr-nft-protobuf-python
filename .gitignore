@@ -2,6 +2,9 @@
 .python-version
 
 *.egg-info
+*.pytest*
 
 *__pycache__
 *.csv
+.coverage
+dist

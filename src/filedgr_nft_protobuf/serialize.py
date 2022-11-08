@@ -24,4 +24,3 @@ def serialize(
         return result
     except Exception as exc:
         raise SerializationException(exc)
-
