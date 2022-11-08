@@ -1,0 +1,12 @@
+syntax = "proto3";
+
+package com.filedgr.nft;
+
+message Nft {
+    // ID of the NFT
+    string id = 1;
+    // Campaign of the NFT, or collection
+    string campaign = 2;
+    // URI of the NFT;
+    string uri = 3;
+}
