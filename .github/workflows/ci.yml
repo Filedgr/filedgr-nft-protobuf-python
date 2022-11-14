@@ -14,10 +14,12 @@ jobs:
         uses: actions/setup-python@v4
         with:
           python-version: '3.9'
+      - name: Run linting
+        run: |
+          make lint
       - name: Run Unit Tests
         run: |
-          pip install -e .  > /dev/null && pip install pytest pytest-cov > /dev/null && sleep 1
-          python -m pytest tests --cov=$(PROJECT_NAME) --cov-config=.coveragerc --cov-fail-under=$(MIN) --cov-report term-missing
+          make coverage
 
 
 
